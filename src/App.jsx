@@ -1,5 +1,5 @@
 import { AuthScreen } from './components/AuthScreen'
-import { Header } from './components/Header'
+import { Dashboard } from './components/Dashboard'
 import { SetupNotice } from './components/SetupNotice'
 import { Spinner } from './components/Spinner'
 import { AuthProvider } from './context/AuthProvider'
@@ -14,16 +14,7 @@ function CurrentScreen() {
   const { user, isLoading } = useAuth()
 
   if (isLoading) return <Spinner label="Restoring your session" />
-  if (!user) return <AuthScreen />
-
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <main className="mx-auto max-w-3xl px-4 py-8">
-        <p className="text-sm text-slate-400">Habit list coming next.</p>
-      </main>
-    </div>
-  )
+  return user ? <Dashboard /> : <AuthScreen />
 }
 
 export default function App() {
