@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { isSupabaseConfigured, supabase } from '../lib/supabaseClient'
+import { supabase } from '../lib/supabaseClient'
 import { AuthContext } from './authContext'
 
 /**
@@ -7,17 +7,15 @@ import { AuthContext } from './authContext'
  *
  * Supabase persists the session in localStorage, so on a page refresh we read
  * it back with getSession() before rendering anything that depends on a user.
+ *
+ * App only mounts this provider once credentials are present, so the client is
+ * always available here.
  */
 export function AuthProvider({ children }) {
   const [session, setSession] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    if (!isSupabaseConfigured) {
-      setIsLoading(false)
-      return undefined
-    }
-
     let isActive = true
 
     supabase.auth.getSession().then(({ data }) => {
