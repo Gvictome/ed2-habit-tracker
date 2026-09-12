@@ -1,7 +1,8 @@
 import { useAuth } from '../hooks/useAuth'
 import { CheckIcon } from './Icons'
+import { LevelBadge } from './LevelBadge'
 
-export function Header() {
+export function Header({ progress = null }) {
   const { user, signOut } = useAuth()
 
   return (
@@ -16,7 +17,10 @@ export function Header() {
           </span>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
+          {progress && (
+            <LevelBadge level={progress.level} isCoolingOff={progress.isCoolingOff} />
+          )}
           <span className="hidden text-[13px] text-slate-500 sm:inline">{user?.email}</span>
           <button
             type="button"

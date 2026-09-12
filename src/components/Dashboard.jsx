@@ -2,9 +2,11 @@ import { useMemo, useState } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import { useHabits } from '../hooks/useHabits'
 import { calculateStreak, isCompletedToday, todayKey } from '../lib/dates'
+import { calculateProgress, isCold } from '../lib/levels'
 import { EmptyState } from './EmptyState'
 import { HabitDetail } from './HabitDetail'
 import { HabitForm } from './HabitForm'
+import { LevelCard } from './LevelCard'
 import { Header } from './Header'
 import { PlusIcon } from './Icons'
 import { Skeleton } from './Skeleton'
@@ -30,11 +32,13 @@ export function Dashboard() {
           habit,
           streak: calculateStreak(days),
           isDone: isCompletedToday(days),
+          isCold: isCold(habit),
         }
       }),
     [habits],
   )
 
+  const progress = useMemo(() => calculateProgress(habits), [habits])
   const doneToday = rows.filter((row) => row.isDone).length
   const leader = rows.reduce(
     (best, row) => (row.streak > best.streak ? row : best),
@@ -54,7 +58,7 @@ export function Dashboard() {
 
   return (
     <div className="min-h-dvh">
-      <Header />
+      <Header progress={progress} />
 
       <main className="mx-auto flex max-w-2xl flex-col gap-6 px-4 pt-5 pb-[max(2rem,env(safe-area-inset-bottom))]">
         {openHabit ? (
@@ -73,6 +77,8 @@ export function Dashboard() {
               bestName={leader.habit?.name}
               bestStreak={leader.streak}
             />
+
+            {habits.length > 0 && <LevelCard progress={progress} />}
 
             {(error || rowError) && (
               <p
@@ -117,6 +123,7 @@ export function Dashboard() {
                         habit={row.habit}
                         isDone={row.isDone}
                         streak={row.streak}
+                        isCold={row.isCold}
                         onToggle={handleToggleToday}
                         onOpen={setOpenHabitId}
                       />

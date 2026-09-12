@@ -35,6 +35,32 @@ Full CRUD and auth underneath:
 - **Delete** a habit, with an inline confirmation. Its check-ins go with it.
 - **Check in** on any of the last seven days. Tapping again undoes it.
 
+### Levels
+
+The app keeps a level that rises with consistency and falls when habits go quiet.
+
+| | |
+|---|---|
+| Every check-in ever | **+10 XP** |
+| Every day of a live streak | **+5 XP** |
+| Each habit that has gone cold | **-50 XP** |
+| More than half your habits cold | **whole score cut 25%** |
+
+A habit counts as **cold** relative to its own target, so a three-times-a-week
+habit is not punished for the days off it was always meant to take: the
+threshold is `ceil(7 / target) + 2` days of silence. A habit with no check-ins
+yet is measured from the day it was created, so a new habit is never born cold.
+
+Levels get progressively more expensive - 0, 100, 300, 600, 1000 XP - and carry
+a title from *Getting started* up to *Unstoppable*.
+
+**The level is derived, not stored.** There is no XP column and no scheduled job
+to decay one. It is recomputed from the check-in rows on every render, which is
+why it can fall on its own, cannot drift out of sync with the data, and cannot
+be inflated by a write that half-failed. The cost is that it is a function of
+current behaviour rather than a permanent trophy - which is exactly what a score
+that has to be able to go down should be.
+
 It also installs as an app: a web manifest, standalone display, theme colour and
 safe-area padding, so adding it to a phone home screen gives a full-screen app
 with no browser chrome.
@@ -53,7 +79,8 @@ unauthenticated request returns zero rows even if it is sent directly to the API
 | Backend / database | Supabase (PostgreSQL) | Free tier, and auth is built in rather than bolted on |
 | Auth | Supabase Auth (email + password) | Issues the JWT that Row Level Security checks |
 | Hosting | Netlify | Connects straight to the GitHub repo |
-| CI | GitHub Actions | Lints and builds every push to `main` |
+| Tests | Vitest | Pure scoring logic, where an off-by-one is invisible by eye |
+| CI | GitHub Actions | Lints, tests and builds every push to `main` |
 
 ### Project structure
 
@@ -63,6 +90,8 @@ src/
     supabaseClient.js   Supabase client + error message translation
     habitsApi.js        every database query, in one place
     dates.js            local-time day keys, streak and weekly-count maths
+    levels.js           XP, levels, and cold-habit detection
+    levels.test.js      23 tests over the scoring rules
     habitColors.js      colour palette
   context/
     authContext.js      the React context object
@@ -79,7 +108,8 @@ src/
     WeekHistory.jsx     the last seven days for every habit
     DayGrid.jsx         the seven day toggles
     HabitForm.jsx       create and edit (same fields, one form)
-    ProgressRing.jsx  StreakChip.jsx  Icons.jsx  Skeleton.jsx
+    LevelCard.jsx       level, XP bar, and the cooling-off warning
+    ProgressRing.jsx  StreakChip.jsx  LevelBadge.jsx  Icons.jsx  Skeleton.jsx
     Header.jsx  EmptyState.jsx  Spinner.jsx  SetupNotice.jsx
 design/
     *.dc.html           design-canvas artboards for the screens above
@@ -145,6 +175,7 @@ policies allow. `.env` is gitignored and never committed.
 ```bash
 npm run dev      # http://localhost:5173
 npm run lint     # oxlint
+npm run test     # vitest, covering the level and streak rules
 npm run build    # production build into dist/
 ```
 

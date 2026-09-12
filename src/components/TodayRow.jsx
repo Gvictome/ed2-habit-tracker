@@ -6,7 +6,7 @@ import { StreakChip } from './StreakChip'
  * One habit, one day. The circle is the primary action and is 44px so it stays
  * a comfortable touch target; the text opens the habit's detail view.
  */
-export function TodayRow({ habit, isDone, streak, onToggle, onOpen }) {
+export function TodayRow({ habit, isDone, streak, isCold = false, onToggle, onOpen }) {
   const color = getColor(habit.color)
 
   return (
@@ -40,8 +40,14 @@ export function TodayRow({ habit, isDone, streak, onToggle, onOpen }) {
           <span className="truncate text-[15px] font-semibold text-white sm:text-base">
             {habit.name}
           </span>
-          {habit.description && (
-            <span className="truncate text-[13px] text-slate-500">{habit.description}</span>
+          {isCold ? (
+            <span className="truncate text-[13px] font-medium text-amber-400">
+              Gone quiet - costing you XP
+            </span>
+          ) : (
+            habit.description && (
+              <span className="truncate text-[13px] text-slate-500">{habit.description}</span>
+            )
           )}
         </span>
         <ChevronRightIcon size={16} className="shrink-0 text-slate-600" />

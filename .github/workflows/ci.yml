@@ -25,6 +25,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Test
+        run: npm run test
+
       # No Supabase secrets needed: without credentials the app builds fine and
       # renders its setup notice at runtime.
       - name: Build
