@@ -1,0 +1,14 @@
+{
+  "name": "Streakly - Habit Tracker",
+  "short_name": "Streakly",
+  "description": "Check off today, keep the streak.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    { "src": "/habit.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

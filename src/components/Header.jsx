@@ -1,33 +1,27 @@
 import { useAuth } from '../hooks/useAuth'
+import { CheckIcon } from './Icons'
 
 export function Header() {
   const { user, signOut } = useAuth()
 
   return (
-    <header className="border-b border-slate-800 bg-slate-900/40">
-      <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-4">
+    <header className="sticky top-0 z-10 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+      <div className="mx-auto flex max-w-2xl items-center justify-between gap-4 px-4 py-3">
         <div className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500">
-            <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
-              <path
-                d="M5 12.5l4.5 4.5L19 7.5"
-                fill="none"
-                stroke="#04231a"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          <span className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-emerald-500">
+            <CheckIcon size={17} className="text-emerald-950" />
           </span>
-          <span className="text-base font-semibold tracking-tight text-white">Streakly</span>
+          <span className="font-display text-[17px] font-bold tracking-tight text-white">
+            Streakly
+          </span>
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="hidden text-sm text-slate-400 sm:inline">{user?.email}</span>
+          <span className="hidden text-[13px] text-slate-500 sm:inline">{user?.email}</span>
           <button
             type="button"
             onClick={signOut}
-            className="rounded-lg border border-slate-700 px-3 py-1.5 text-sm font-medium text-slate-300 transition hover:border-slate-600 hover:text-white"
+            className="rounded-[9px] border border-slate-700 px-3 py-1.5 text-[13px] font-medium text-slate-300 transition-colors hover:border-slate-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500"
           >
             Log out
           </button>
