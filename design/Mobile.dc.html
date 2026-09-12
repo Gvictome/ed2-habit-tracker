@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+  <style>
+    body { margin: 0; font-family: Manrope, system-ui, sans-serif; background: #020617; }
+    a { color: #00d492; } a:hover { color: #5ee9b5; }
+    .num { font-family: 'Space Grotesk', system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+  </style>
+</helmet>
+<div style="width: 390px; min-height: 844px; background: #020617; color: #f1f5f9;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 20px 12px;">
+    <div style="display: flex; align-items: center; gap: 9px;">
+      <span style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 9px; background: #00bc7d;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002c22" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+      <span class="num" style="font-size: 16px; font-weight: 700;">Streakly</span>
+    </div>
+    <span style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; border: 1px solid #314158; font-size: 12px; font-weight: 600; color: #cad5e2;">G</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 20px; padding: 8px 20px 28px;">
+
+    <div style="display: flex; align-items: center; gap: 18px; padding: 18px 20px; border: 1px solid #1d293d; border-radius: 18px; background: rgba(15,23,43,0.6);">
+      
+      <div style="position: relative; width: 70px; height: 70px; flex-shrink: 0;">
+        <svg width="70" height="70" viewBox="0 0 70 70">
+          <circle cx="35.0" cy="35.0" r="30.0" fill="none" stroke="#1d293d" stroke-width="8"></circle>
+          <circle cx="35.0" cy="35.0" r="30.0" fill="none" stroke="#00bc7d" stroke-width="8" stroke-linecap="round" stroke-dasharray="188.50" stroke-dashoffset="62.83" transform="rotate(-90 35.0 35.0)"></circle>
+        </svg>
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <span class="num" style="font-size: 18px; font-weight: 700; line-height: 1; color: #ffffff;">2/3</span>
+          <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #62748e; margin-top: 3px;">done</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #00d492;">Today</span>
+        <span class="num" style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em; color: #ffffff;">Fri, Sept 11</span>
+        <span style="font-size: 12px; color: #90a1b9;">One habit left</span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      
+      <div style="display: flex; align-items: center; gap: 16px; padding: 13px 18px; border: 1px solid #1d293d; border-radius: 16px; background: rgba(15,23,43,0.6);">
+        <button style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; border: none; background: #00a6f4; cursor: pointer;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#021b2b" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></button>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;">
+          <span style="font-size: 16px; font-weight: 600; color: #ffffff;">Morning run</span>
+          <span style="font-size: 13px; color: #62748e;">Three miles</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; background: rgba(0,166,244,0.12);">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00a6f4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c0 4-4 5-4 9a4 4 0 0 0 8 0c0-1.5-.8-2.7-1.6-3.7"></path></svg>
+          <span class="num" style="font-size: 13px; font-weight: 600; color: #00a6f4;">12</span>
+        </div>
+      </div>
+      
+      <div style="display: flex; align-items: center; gap: 16px; padding: 13px 18px; border: 1px solid #314158; border-radius: 16px; background: rgba(15,23,43,0.6);">
+        <button style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; border: 2px solid #45556c; background: transparent; cursor: pointer;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#45556c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></button>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;">
+          <span style="font-size: 16px; font-weight: 600; color: #ffffff;">Read 20 minutes</span>
+          <span style="font-size: 13px; color: #62748e;">Before bed</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; background: rgba(142,81,255,0.12);">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8e51ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c0 4-4 5-4 9a4 4 0 0 0 8 0c0-1.5-.8-2.7-1.6-3.7"></path></svg>
+          <span class="num" style="font-size: 13px; font-weight: 600; color: #8e51ff;">4</span>
+        </div>
+      </div>
+      
+      <div style="display: flex; align-items: center; gap: 16px; padding: 13px 18px; border: 1px solid #1d293d; border-radius: 16px; background: rgba(15,23,43,0.6);">
+        <button style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; border: none; background: #00bc7d; cursor: pointer;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#002c22" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></button>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;">
+          <span style="font-size: 16px; font-weight: 600; color: #ffffff;">Meditate</span>
+          <span style="font-size: 13px; color: #62748e;">Ten minutes</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; background: rgba(0,188,125,0.12);">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00bc7d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c0 4-4 5-4 9a4 4 0 0 0 8 0c0-1.5-.8-2.7-1.6-3.7"></path></svg>
+          <span class="num" style="font-size: 13px; font-weight: 600; color: #00bc7d;">2</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 11px; padding: 16px 18px; border: 1px solid #1d293d; border-radius: 18px; background: rgba(15,23,43,0.6);">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #00a6f4;"></span>
+        <span style="font-size: 13px; font-weight: 500; color: #cad5e2;">Morning run</span>
+      </div>
+      <div style="display: flex; gap: 5px;"><span class="num" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; font-size: 11px; border: 1px solid #1d293d; color: #45556c;">5</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b;">6</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b;">7</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b;">8</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b;">9</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b;">10</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b; outline: 2px solid #cad5e2; outline-offset: 2px;">11</span></div>
+    </div>
+
+    <button style="font-family: inherit; padding: 13px; border: none; border-radius: 13px; background: #00bc7d; font-size: 14px; font-weight: 700; color: #002c22; cursor: pointer;">New habit</button>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "artboards": [
+    {
+      "file": "Auth.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 880,
+      "h": 720
+    },
+    {
+      "file": "Main.dc.html",
+      "x": 960,
+      "y": 0,
+      "w": 900,
+      "h": 880,
+      "title": "Today"
+    },
+    {
+      "file": "Mobile.dc.html",
+      "x": 1940,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "Today (phone)"
+    },
+    {
+      "file": "HabitDetail.dc.html",
+      "x": 0,
+      "y": 1000,
+      "w": 900,
+      "h": 800,
+      "title": "Habit detail"
+    },
+    {
+      "file": "EmptyState.dc.html",
+      "x": 980,
+      "y": 1000,
+      "w": 900,
+      "h": 560,
+      "title": "Empty state"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "note-today",
+      "x": 960,
+      "y": -160,
+      "w": 420,
+      "text": "The change: the dashboard opens on TODAY.\nOne 44px tap per habit, a ring showing the day's progress, and the 7-day grids demoted to history below."
+    },
+    {
+      "id": "note-detail",
+      "x": 0,
+      "y": 1860,
+      "w": 380,
+      "text": "Habit detail is new: streak stats, an editable week, and a four-week grid so progress is visible at a glance."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

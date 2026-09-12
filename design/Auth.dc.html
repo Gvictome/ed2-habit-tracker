@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+  <style>
+    body { margin: 0; font-family: Manrope, system-ui, sans-serif; background: #020617; }
+    a { color: #00d492; } a:hover { color: #5ee9b5; }
+    .num { font-family: 'Space Grotesk', system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+  </style>
+</helmet>
+<div style="width: 880px; min-height: 720px; background: #020617; color: #f1f5f9;">
+
+  <div style="display: flex; align-items: center; justify-content: center; min-height: 720px; padding: 40px;">
+    <div style="width: 380px;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 30px;">
+        <span style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 16px; background: #00bc7d;">
+          <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#002c22" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+        </span>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+          <h1 class="num" style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: #ffffff;">Streakly</h1>
+          <p style="margin: 0; font-size: 14px; color: #90a1b9;">Do the thing. Keep the streak.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; border: 1px solid #1d293d; border-radius: 20px; background: rgba(15,23,43,0.6);">
+        <div style="display: flex; gap: 4px; padding: 4px; border-radius: 12px; background: #020617;">
+          <span style="flex-grow: 1; text-align: center; padding: 7px; border-radius: 9px; background: #1d293d; font-size: 13px; font-weight: 600; color: #ffffff;">Log in</span>
+          <span style="flex-grow: 1; text-align: center; padding: 7px; border-radius: 9px; font-size: 13px; font-weight: 500; color: #62748e;">Register</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label style="font-size: 12px; font-weight: 600; color: #90a1b9;">Email</label>
+          <div style="padding: 11px 13px; border: 1px solid #314158; border-radius: 11px; background: #020617; font-size: 14px; color: #ffffff;">gio@streakly.app</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label style="font-size: 12px; font-weight: 600; color: #90a1b9;">Password</label>
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 11px 13px; border: 1px solid #00bc7d; border-radius: 11px; background: #020617; font-size: 14px; color: #90a1b9;">
+            <span style="letter-spacing: 0.18em; color: #cad5e2;">&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#62748e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          </div>
+        </div>
+
+        <button style="font-family: inherit; margin-top: 4px; padding: 12px; border: none; border-radius: 11px; background: #00bc7d; font-size: 14px; font-weight: 700; color: #002c22; cursor: pointer;">Log in</button>
+      </div>
+
+      <p style="margin: 18px 0 0; text-align: center; font-size: 13px; color: #62748e;">No account yet? <a href="#" style="font-weight: 600; text-decoration: none;">Create one</a></p>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

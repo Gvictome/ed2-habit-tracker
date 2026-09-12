@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+  <style>
+    body { margin: 0; font-family: Manrope, system-ui, sans-serif; background: #020617; }
+    a { color: #00d492; } a:hover { color: #5ee9b5; }
+    .num { font-family: 'Space Grotesk', system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+  </style>
+</helmet>
+<div style="width: 900px; min-height: 800px; background: #020617; color: #f1f5f9;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 40px; border-bottom: 1px solid #1d293d; background: rgba(15,23,43,0.4);">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 10px; background: #00bc7d;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#002c22" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+      </span>
+      <span class="num" style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em;">Streakly</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <span style="font-size: 13px; color: #62748e;">gio@streakly.app</span>
+      <button style="font-family: inherit; font-size: 13px; font-weight: 500; color: #cad5e2; background: transparent; border: 1px solid #314158; border-radius: 9px; padding: 6px 12px; cursor: pointer;">Log out</button>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 22px; padding: 28px 40px 40px;">
+
+    <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #62748e;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#62748e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+      <span>Today</span>
+    </div>
+
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 7px;">
+        <div style="display: flex; align-items: center; gap: 11px;">
+          <span style="width: 11px; height: 11px; border-radius: 50%; background: #00a6f4;"></span>
+          <h1 class="num" style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.02em; color: #ffffff;">Morning run</h1>
+        </div>
+        <p style="margin: 0; font-size: 14px; color: #90a1b9;">Three miles before class</p>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button style="font-family: inherit; font-size: 13px; font-weight: 500; color: #cad5e2; background: transparent; border: 1px solid #314158; border-radius: 10px; padding: 8px 14px; cursor: pointer;">Edit</button>
+        <button style="font-family: inherit; font-size: 13px; font-weight: 500; color: #ff2056; background: transparent; border: 1px solid rgba(255,32,86,0.35); border-radius: 10px; padding: 8px 14px; cursor: pointer;">Delete</button>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+      <div style="display: flex; flex-direction: column; gap: 5px; padding: 16px 18px; border: 1px solid #1d293d; border-radius: 16px; background: rgba(15,23,43,0.6);">
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #62748e;">Current streak</span>
+        <span class="num" style="font-size: 28px; font-weight: 700; line-height: 1.1; color: #00a6f4;">12 days</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 5px; padding: 16px 18px; border: 1px solid #1d293d; border-radius: 16px; background: rgba(15,23,43,0.6);">
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #62748e;">Best streak</span>
+        <span class="num" style="font-size: 28px; font-weight: 700; line-height: 1.1; color: #ffffff;">18 days</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 5px; padding: 16px 18px; border: 1px solid #1d293d; border-radius: 16px; background: rgba(15,23,43,0.6);">
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #62748e;">This week</span>
+        <span class="num" style="font-size: 28px; font-weight: 700; line-height: 1.1; color: #ffffff;">6 <span style="font-size: 17px; font-weight: 500; color: #45556c;">/ 5</span></span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 13px; padding: 20px 22px; border: 1px solid #1d293d; border-radius: 18px; background: rgba(15,23,43,0.6);">
+      <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #62748e;">This week</h2>
+      <div style="display: flex; gap: 8px;"><span class="num" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 9px; font-size: 11px; border: 1px solid #1d293d; color: #45556c;">5</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b;">6</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b;">7</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b;">8</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b;">9</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b;">10</span><span class="num" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 9px; font-size: 11px; background: #00a6f4; font-weight: 600; color: #021b2b; outline: 2px solid #cad5e2; outline-offset: 2px;">11</span></div>
+      <p style="margin: 0; font-size: 13px; color: #45556c;">Tap any day to add or remove a check-in.</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 13px; padding: 20px 22px; border: 1px solid #1d293d; border-radius: 18px; background: rgba(15,23,43,0.6);">
+      <div style="display: flex; align-items: baseline; justify-content: space-between;">
+        <h2 style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #62748e;">Last four weeks</h2>
+        <span class="num" style="font-size: 12px; color: #45556c;">24 of 28 days</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: flex; gap: 6px;"><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #1d293d;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #1d293d;"></span></div>
+        <div style="display: flex; gap: 6px;"><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #1d293d;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span></div>
+        <div style="display: flex; gap: 6px;"><span style="width: 20px; height: 20px; border-radius: 6px; background: #1d293d;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span></div>
+        <div style="display: flex; gap: 6px;"><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span><span style="width: 20px; height: 20px; border-radius: 6px; background: #00a6f4;"></span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

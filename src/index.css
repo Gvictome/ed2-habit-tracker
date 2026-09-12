@@ -1,18 +1,46 @@
 @import 'tailwindcss';
 
+/* Design-canvas artboards are hand-written inline styles, not Tailwind
+   classes. Scanning them only pollutes the stylesheet. */
+@source not '../design';
+
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: Manrope, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
   color-scheme: dark;
+  /* Stop the page rubber-banding behind the app when it runs standalone. */
+  overscroll-behavior-y: none;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100dvh;
   background-color: var(--color-slate-950);
   color: var(--color-slate-100);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  /* Taps should look like taps, not like a text selection. */
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Stats read as numbers, so keep the digits from shifting as they change. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -30,3 +30,6 @@ dist-ssr
 
 # Netlify
 .netlify
+
+# Seeded design-canvas payload (2.5 MB, regenerate with the design skill)
+design/streakly-today-redesign.html
