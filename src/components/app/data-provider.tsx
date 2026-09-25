@@ -142,15 +142,16 @@ export function DataProvider({ user, initialProfile, initialHabits, initialGoals
 
   const saveEntry = useCallback(
     async (habitId: string, day: string, fields: { value: number | null; note: string }) => {
-      const previous = habitsRef.current
-      const existing = previous.find((habit) => habit.id === habitId)
+      const existing = habitsRef.current.find((habit) => habit.id === habitId)
       const existingEntry = existing ? entryFor(existing, day) : undefined
       const optimistic: CheckIn = { id: existingEntry?.id ?? `pending-${day}`, day, ...fields }
       setHabits((current) => withEntry(current, habitId, day, optimistic))
 
       const { data, error } = await api.upsertEntry(user.id, habitId, day, fields)
       if (error || !data) {
-        setHabits(previous)
+        // Undo only this day. Restoring a whole snapshot would also wipe any
+        // other check-in that was confirmed while this request was in flight.
+        setHabits((current) => withEntry(current, habitId, day, existingEntry ?? null))
         return reportError(error, 'Could not save that day.')
       }
       setHabits((current) => withEntry(current, habitId, day, api.normaliseEntryRow(data)))
@@ -160,11 +161,12 @@ export function DataProvider({ user, initialProfile, initialHabits, initialGoals
   )
 
   const clearEntry = useCallback(async (habitId: string, day: string) => {
-    const previous = habitsRef.current
+    const existing = habitsRef.current.find((habit) => habit.id === habitId)
+    const existingEntry = existing ? entryFor(existing, day) : undefined
     setHabits((current) => withEntry(current, habitId, day, null))
     const { error } = await api.removeEntry(habitId, day)
     if (error) {
-      setHabits(previous)
+      setHabits((current) => withEntry(current, habitId, day, existingEntry ?? null))
       return reportError(error, 'Could not update that day.')
     }
     return true
