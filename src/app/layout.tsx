@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   description:
     'Track habits, log measurements, set goals with deadlines, and earn milestones. A habit tracker that shows you the progress you are actually making.',
   applicationName: 'Streakly',
+  icons: { icon: '/icon.svg', apple: '/icon.svg' },
   appleWebApp: { capable: true, title: 'Streakly', statusBarStyle: 'black-translucent' },
 }
 

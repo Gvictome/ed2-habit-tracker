@@ -29,7 +29,7 @@ export function SetupNotice({ kind, detail }: SetupNoticeProps) {
           <>
             <p className="mt-2 text-sm leading-relaxed text-muted">
               Open the Supabase dashboard, go to <strong className="text-foreground">SQL Editor</strong>, paste{' '}
-              <code className="text-foreground">supabase/migrations/002_v2_goals_measurements_profiles.sql</code>,
+              <code className="break-all text-foreground">supabase/migrations/002_v2_goals_measurements_profiles.sql</code>,
               and run it. It only adds tables and columns; existing habits are untouched.
             </p>
             {detail && (

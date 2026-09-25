@@ -70,7 +70,8 @@ export function Logo({ className, withWord = true }: { className?: string; withW
   return (
     <span className={cn('inline-flex items-center gap-2.5', className)}>
       <svg viewBox="0 0 64 64" className="size-8 shrink-0" aria-hidden>
-        <rect width="64" height="64" rx="16" className="fill-foreground" />
+        {/* Always a dark tile so the volt mark reads in both themes. */}
+        <rect x="1" y="1" width="62" height="62" rx="15" fill="#0d0f14" className="stroke-white/15" strokeWidth="2" />
         <circle cx="32" cy="32" r="19" fill="none" stroke="#b6f03c" strokeOpacity="0.22" strokeWidth="6" />
         <path d="M32 13a19 19 0 1 1-17.9 12.7" fill="none" stroke="#b6f03c" strokeWidth="6" strokeLinecap="round" />
         <path

@@ -25,7 +25,9 @@ export function HeroPreview() {
     const seed = Math.sin(index * 12.9898) * 43758.5453
     const noise = seed - Math.floor(seed)
     const trend = index / (16 * 7)
-    return Math.min(4, Math.floor((noise * 0.7 + trend * 0.6) * 5))
+    // Mostly quiet early on, denser toward today: the shape of a habit forming.
+    const score = (noise * 0.5 + trend * 0.55) ** 1.6
+    return noise < 0.18 ? 0 : Math.min(4, Math.floor(score * 5))
   })
   const heatClass = ['bg-surface-3', 'bg-accent/25', 'bg-accent/50', 'bg-accent/75', 'bg-accent']
 
