@@ -9,17 +9,25 @@ import {
   xpForLevel,
 } from './levels'
 import { toDayKey } from './dates'
+import type { Habit } from './types'
 
 const NOW = new Date(2026, 8, 12) // 12 September 2026, local time.
 
-function dayOffset(offset) {
+function dayOffset(offset: number): string {
   const date = new Date(NOW)
   date.setDate(date.getDate() + offset)
   return toDayKey(date)
 }
 
+interface HabitOptions {
+  name?: string
+  target?: number
+  offsets?: number[]
+  createdOffset?: number
+}
+
 /** A habit whose check-ins are the given day offsets from NOW (0 = today). */
-function habit({ name = 'Test', target = 7, offsets = [], createdOffset = -30 } = {}) {
+function habit({ name = 'Test', target = 7, offsets = [], createdOffset = -30 }: HabitOptions = {}): Habit {
   const created = new Date(NOW)
   created.setDate(created.getDate() + createdOffset)
   return {
