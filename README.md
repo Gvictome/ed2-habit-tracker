@@ -11,8 +11,8 @@ than hand-written code.
 
 | | |
 |---|---|
-| **Live app** | https://REPLACE-ME.netlify.app |
-| **Demo video** | https://youtu.be/REPLACE-ME (unlisted) |
+| **Live app** | https://resplendent-narwhal-9ee9d4.netlify.app |
+| **Demo video** | https://youtu.be/onetj5UQPKM (unlisted) |
 | **Repository** | https://github.com/Gvictome/ed2-habit-tracker |
 
 ---
