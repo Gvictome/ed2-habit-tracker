@@ -1,15 +1,15 @@
 # Netlify build settings. Netlify reads this automatically, so the site can be
 # created by linking the repository without filling anything in by hand.
+#
+# Netlify detects Next.js and runs it with its OpenNext adapter: pages, the
+# auth proxy, Server Actions, and route handlers all deploy as functions.
+# No SPA redirect is needed - Next.js does its own routing.
+#
+# Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in the site's
+# environment variables BEFORE the first build: Next.js inlines them.
 [build]
   command = "npm run build"
-  publish = "dist"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "22"
-
-# Single-page app: every path must serve index.html so a refresh on any URL
-# does not 404.
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
